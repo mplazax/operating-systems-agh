@@ -1,0 +1,9 @@
+Szerokość: 1.000000, Procesy: 10, Czas: 0.002803 sekund, Wynik: 32.399260
+Szerokość: 1.000000, Procesy: 100, Czas: 0.020100 sekund, Wynik: 315.157599
+Szerokość: 1000.000000, Procesy: 100, Czas: 0.019398 sekund, Wynik: 315157.598692
+Szerokość: 1000.000000, Procesy: 1000, Czas: 0.137701 sekund, Wynik: 3142592.486923
+Szerokość: 0.000100, Procesy: 100, Czas: 0.019388 sekund, Wynik: 3.169434
+Szerokość: 0.000100, Procesy: 1000, Czas: 0.139954 sekund, Wynik: 3.416009
+Szerokość: 0.000100, Procesy: 10, Czas: 0.001620 sekund, Wynik: 3.144337
+Szerokość: 0.000001, Procesy: 10, Czas: 0.002165 sekund, Wynik: 3.141604
+Szerokość: 0.000001, Procesy: 100, Czas: 0.019757 sekund, Wynik: 3.141685

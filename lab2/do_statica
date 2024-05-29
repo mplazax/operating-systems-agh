@@ -1,0 +1,39 @@
+CC=gcc
+CFLAGS=-Wall -fPIC -O0
+
+# Domyślny cel
+all: static shared dynamic
+
+# Kompilacja biblioteki statycznej
+static: libcollatz.a main_static
+
+libcollatz.a: collatz.o
+	ar rcs $@ $^
+
+collatz.o: collatz.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+main_static: main.o libcollatz.a
+	$(CC) $(CFLAGS) -static main.o -L. -lcollatz -o $@
+
+# Kompilacja biblioteki współdzielonej
+shared: libcollatz.so main_shared
+
+libcollatz.so: collatz.o
+	$(CC) -shared -o $@ $^
+
+main_shared: main.o
+	$(CC) $(CFLAGS) main.o -L. -lcollatz -o $@
+
+# Kompilacja z biblioteką ładowaną dynamicznie
+dynamic: libcollatz.so main_dynamic
+
+main_dynamic: main.c
+	$(CC) $(CFLAGS) -DDYNAMIC $< -ldl -o $@
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Czyszczenie
+clean:
+	rm -f *.o *.a *.so main_static main_shared main_dynamic
